@@ -50,3 +50,27 @@ Shaif Arfan, “MERN stack project for beginners” / task management app tutori
 https://youtu.be/7s7RHc_8SaU
 
 Use the tutorial as the learning reference, but clearly describe the implementation you actually built and the changes you made. Do not claim that you followed steps you did not follow.
+
+## Key Features
+
+- Add, complete, and delete tasks
+- Search tasks
+- Filter tasks by status and priority
+- View task statistics
+- Responsive user interface
+- React Router navigation
+- Express.js REST API
+
+## Project Structure
+
+- `frontend/` - React frontend application
+- `backend/` - Express.js backend and API
+
+## How to Run
+
+### Backend
+
+```bash
+cd backend
+npm install
+node server.js

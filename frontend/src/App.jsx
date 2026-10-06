@@ -97,15 +97,46 @@ function Dashboard() {
           <div className="panel-heading">
             <div><p className="eyebrow">YOUR WORKLOAD</p><h2>Tasks <span className="count">{visibleTasks.length}</span></h2></div>
           </div>
-          <div className="filters">
-            <input aria-label="Search tasks" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search tasks..." />
-            <select aria-label="Filter by status" value={status} onChange={e => setStatus(e.target.value)}>
-              <option>All</option><option>Pending</option><option>Completed</option>
-            </select>
-            <select aria-label="Filter by priority" value={priority} onChange={e => setPriority(e.target.value)}>
-              <option>All</option><option>High</option><option>Medium</option><option>Low</option>
-            </select>
-          </div>
+         <div className="filters">
+  <input
+    aria-label="Search tasks"
+    value={search}
+    onChange={e => setSearch(e.target.value)}
+    placeholder="Search tasks..."
+  />
+
+  <select
+    aria-label="Filter by status"
+    value={status}
+    onChange={e => setStatus(e.target.value)}
+  >
+    <option>All</option>
+    <option>Pending</option>
+    <option>Completed</option>
+  </select>
+
+  <select
+    aria-label="Filter by priority"
+    value={priority}
+    onChange={e => setPriority(e.target.value)}
+  >
+    <option>All</option>
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+  </select>
+
+  <button
+    type="button"
+    onClick={() => {
+      setSearch("");
+      setStatus("All");
+      setPriority("All");
+    }}
+  >
+    Clear Filters
+  </button>
+</div>
           {error && <div className="notice error">{error} <button onClick={loadTasks}>Retry</button></div>}
           {loading ? <p className="empty">Loading your tasks…</p> :
             <TaskList tasks={visibleTasks} onToggle={toggleTask} onDelete={deleteTask} />}
